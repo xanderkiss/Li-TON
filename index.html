@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Message and Image to LINE</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .logo {
+            width: 294.25px;
+            height: 86px;
+            margin-bottom: 20px;  /* ให้โลโก้อยู่ด้านบนสุด */
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        label {
+            font-size: 14px;
+            color: #555;
+            text-align: left;
+            display: block;
+            margin-bottom: 8px;
+        }
+        input[type="text"], input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        input[type="submit"] {
+            background-color: #00C300;
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #00A300;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+        .footer p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="https://www.tsm.go.th/wp-content/uploads/2021/01/Logo001-Copy-Copy-copy-1.png" alt="Logo" class="logo">
+        <h2>ระบบส่งข้อความพร้อมรูป</h2>
+        <form action="line_notify.php" method="post" enctype="multipart/form-data">
+            <label for="message">Message:</label>
+            <input type="text" id="message" name="message" placeholder="Enter your message here" required><br>
+
+            <label for="image">Upload Image (Optional):</label>
+            <input type="file" id="image" name="image" accept="image/*"><br>
+
+            <label>Select Tokens:</label>
+            <label><input type="checkbox" name="tokens[]" value="mDUnaCq2CdGQ719QSqi8lBwWc4ELinA2cNW3TeUjRrG"> กลุ่มส่วนตัว 1</label>
+            <label><input type="checkbox" name="tokens[]" value="mDUnaCq2CdGQ719QSqi8lBwWc4ELinA2cNW3TeUjRrG"> กลุ่มส่วนตัว 2</label>
+            <label><input type="checkbox" name="tokens[]" value="mDUnaCq2CdGQ719QSqi8lBwWc4ELinA2cNW3TeUjRrG"> กลุ่มส่วนตัว 3</label>
+            <label><input type="checkbox" name="tokens[]" value="mDUnaCq2CdGQ719QSqi8lBwWc4ELinA2cNW3TeUjRrG"> กลุ่มส่วนตัว 4</label>
+            <label><input type="checkbox" name="tokens[]" value="mDUnaCq2CdGQ719QSqi8lBwWc4ELinA2cNW3TeUjRrG"> กลุ่มส่วนตัว 5</label><br>
+
+            <input type="submit" value="Send to LINE">
+        </form>
+
+        <div class="footer">
+            <p>จัดทำโดย<br>
+			นวก.โสตฯ ศุภฤกษ์ เนตรแก้ว</p>
+            
+        </div>
+    </div>
+
+</body>
+</html>
